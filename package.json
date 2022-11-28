@@ -1,5 +1,6 @@
 {
-  "name": "@example/basics",
+  "name": "literal-garage-com",
+  "description": "The Literal Garage LLC website.",
   "type": "module",
   "version": "0.0.1",
   "private": true,
