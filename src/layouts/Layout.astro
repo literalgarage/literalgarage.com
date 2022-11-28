@@ -21,13 +21,20 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+    /** Define some common colors. */
+    --indigo-500: #6366f1;
+    --fuchsia-500: #d946ef;
+    --pink-500: #ec4899;
+
+    /* Define top-left to bottom-right gradient with indigo-500, fuschia-500, and pink-500  stops. */
+    --accent-gradient: linear-gradient(to bottom right, var(--indigo-500), var(--fuchsia-500), var(--pink-500));
 	}
+
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: rgb(20, 20, 20);
 	}
+
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;

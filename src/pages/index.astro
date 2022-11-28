@@ -1,81 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Literal Garage LLC">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<h1><span class="text-gradient">One&nbsp;man.<br />One&nbsp;garage.<br />Literally.</span></h1>
+    <div class="colophon">Literal Garage LLC is the portfolio of <a href="https://davepeck.org/">Dave&nbsp;Peck</a>, an indie software dev.</div>
+    <div class="hero-image"><img src="/pub-garage-hero.png" alt="" /></div>
 	</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+	  margin: auto;
 	}
+
+  .hero-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+  }
+
 	h1 {
-		font-size: 3rem;
+		font-size: 5rem;
 		font-weight: 800;
-		margin: 0;
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 	}
+
+  /** Make h1 smaller (4rem) on an iPhone 14 Max or smaller device. */
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  /** Make h1 even smaller (3.25rem) on iPhone mini devices. */
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 3.25rem;
+    }
+  }
+
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+    /** Add a black shadow to the bottom-right exterior of the text. */
+    filter: drop-shadow(2px 2px 0.5rem black);
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+
+  .colophon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: #ccc;
+    filter: drop-shadow(1px 1px 0.125rem black);
+  }
+
+  a {
+    color: #ddd;
+  }
+
+  a:hover {
+    color: white;
+  }
 </style>
