@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Literal Garage LLC">
 	<main>
 		<h1><span class="text-gradient">One&nbsp;man.<br />One&nbsp;garage.<br />Literally.</span></h1>
-    <div class="colophon">Literal Garage LLC is the portfolio of <a href="https://davepeck.org/">Dave&nbsp;Peck</a>, an indie software dev.</div>
-    <div class="hero-image"><img src="/pub-garage-hero.png" alt="" /></div>
+    <div class="colophon">Literal Garage LLC is the portfolio of <a href="https://davepeck.org/">Dave&nbsp;Peck</a>, an independent software developer.</div>
+    <div class="hero-image">&nbsp;</div>
 	</main>
 </Layout>
 
@@ -21,14 +21,11 @@ import Layout from '../layouts/Layout.astro';
     left: 0;
     bottom: 0;
     right: 0;
+    background-image: url('/pub-garage-hero-topfade.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
     z-index: -1;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0.5;
   }
 
 	h1 {
@@ -59,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
     /** Add a black shadow to the bottom-right exterior of the text. */
-    filter: drop-shadow(2px 2px 0.5rem black);
+    filter: drop-shadow(2px 2px 0.333rem black);
 	}
 
   .colophon {
@@ -69,7 +66,7 @@ import Layout from '../layouts/Layout.astro';
     right: 0;
     padding-left: 1em;
     padding-right: 1em;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     text-align: center;
     margin: 0 auto;
     line-height: 1.5;
