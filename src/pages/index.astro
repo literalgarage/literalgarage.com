@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Literal Garage LLC">
 	<main>
 		<h1><span class="text-gradient">One&nbsp;man.<br />One&nbsp;garage.<br />Literally.</span></h1>
+    <img src="/pub-garage-hero.png" alt="Literally, a garage." />
     <div class="colophon">Literal Garage LLC is the portfolio of <a href="https://davepeck.org/">Dave&nbsp;Peck</a>, an independent software developer.</div>
-    <div class="hero-image">&nbsp;</div>
 	</main>
 </Layout>
 
@@ -15,25 +15,21 @@ import Layout from '../layouts/Layout.astro';
 	  margin: auto;
 	}
 
-  .hero-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-image: url('/pub-garage-hero-topfade.png');
-    background-size: contain;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    z-index: -1;
+  img {
+    max-width: 400px;
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;
   }
 
 	h1 {
 		font-size: 5rem;
 		font-weight: 800;
-    margin-top: 25vh;
+    margin-top: 3vh;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 6vh;
     text-align: center;
 	}
 
@@ -70,7 +66,7 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
     margin: 0 auto;
     line-height: 1.5;
-    color: #ccc;
+    color: #bbb;
     filter: drop-shadow(1px 1px 0.125rem black);
   }
 
