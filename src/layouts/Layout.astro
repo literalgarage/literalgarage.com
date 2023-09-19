@@ -14,7 +14,10 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-	</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,800;1,300;1,600&display=swap" rel="stylesheet">  
+  </head>
 	<body>
 		<slot />
 	</body>
@@ -22,21 +25,57 @@ const { title } = Astro.props;
 <style is:global>
 	:root {
     /** Define some common colors. */
-    --indigo-500: #6366f1;
-    --fuchsia-500: #d946ef;
-    --pink-500: #ec4899;
-
-    /* Define top-left to bottom-right gradient with indigo-500, fuschia-500, and pink-500  stops. */
-    --accent-gradient: linear-gradient(to bottom right, var(--indigo-500), var(--fuchsia-500), var(--pink-500));
+    --poster-car: rgb(10, 8, 29);
+    --blow-up-my-mind: rgb(145, 104, 72);
+    --eternity: rgb(207, 86, 67);
+    --grun: rgb(243, 193, 158);
+    --spanish-cream: rgb(255, 251, 216);
 	}
 
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: rgb(0, 0, 0);
+		font-family: 'Crimson Pro', serif;
+		background-color: var(--spanish-cream);
+    letter-spacing: -0.075em;
 	}
 
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  main {
+    font-size: 4em;
+    margin: 1em 1em auto;
+    max-width: 12em;
+  }
+
+  /** If we're on a smaller device, make the `main` smaller. */
+  @media (max-width: 600px) {
+    main {
+      font-size: 2.4em;
+      margin: 1em 1em auto;
+      max-width: 8em;
+    }
+  }
+
+  a {
+    color: var(--blow-up-my-mind);
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  a:hover {
+    color: var(--eternity);
+  }
+
+  .text-poster-car {
+    color: var(--poster-car);
+  }
+
+  .text-eternity {
+    color: var(--eternity);
+  }
+
+  .text-grun {
+    color: var(--grun);
+  }
+
+  .text-spanish-cream {
+    color: var(--spanish-cream);
+  }
 </style>
